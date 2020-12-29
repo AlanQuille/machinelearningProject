@@ -7,6 +7,7 @@ from tensorflow.keras.models import Model
 import numpy as np
 import pandas as pd
 
+# read in data from powerproduction.csv
 lin_data = pd.read_csv('powerproduction.csv')
 
 # drop appropriate rows, they are outliers
