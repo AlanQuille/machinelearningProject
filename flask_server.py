@@ -10,7 +10,7 @@ import pandas as pd
 lin_data = pd.read_csv('powerproduction.csv')
 
 # drop appropriate rows, they are outliers
-lin_data = lin_data.drop([208, 340, 404, 456, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499]);
+lin_data = lin_data.drop([208, 340, 404, 456, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499])
 
 # X and y values for regression
 X = lin_data.iloc[:, 0].values
@@ -35,15 +35,17 @@ def decTree(speed):
 # output predicted power
 X_train2, X_test2, y_train2, y_test2 = train_test_split(X, y, test_size=0.2, random_state=0)
 
+# create neural network: output, input and hidden alyers
 input_layer = Input(shape=(X.shape[1],))
 dense_layer_1 = Dense(500, activation='relu')(input_layer)
 dense_layer_2 = Dense(100, activation='relu')(dense_layer_1)
 dense_layer_3 = Dense(50, activation='relu')(dense_layer_2)
 output = Dense(1)(dense_layer_3)
 
+# compile and fit model
 model = Model(inputs=input_layer, outputs=output)
 model.compile(loss="mean_squared_error" , optimizer="adam", metrics=["mean_squared_error"])
-model.fit(X_train2, y_train2, batch_size=2, epochs=50, verbose=0, validation_split=0.2)
+model.fit(X_train2, y_train2, batch_size=2, epochs=15, verbose=0, validation_split=0.2)
 
 # return string version
 def neuralNet(speed):
@@ -59,14 +61,17 @@ app = Flask(__name__)
 #def hello():
 #    return "Hello World!"
 
+# redirects to main index page at root
 @app.route('/')
 def home():
     return redirect("static/index.html")
 
 
-# speed value used by all
+# global speed variable
 speed = 0
 
+# this gets speed value from HTML file
+# performs dec tree regression
 @app.route("/api/decTree", methods = ["GET", "POST"])
 def uniform():
     global speed
@@ -74,6 +79,8 @@ def uniform():
         speed = float(request.json)
     return {"value": decTree(speed)}
 
+# this gets speed value from HTML file
+# performs neural net regression
 @app.route("/api/neuralNet", methods = ["GET", "POST"])
 def normal():
     global speed
@@ -81,6 +88,6 @@ def normal():
         speed = float(request.json)
     return {"value": neuralNet(speed)}
 
-
+# run app
 if __name__ == '__main__':
     app.run()
