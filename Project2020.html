@@ -14292,7 +14292,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Decision-Trees-">Decision Trees <a name="dectree" /><a class="anchor-link" href="#Decision-Trees-">&#182;</a></h2><p>This project will use the the DecisionTreeRegressor function from the sklearn package to perform regression using Decision Trees</p>
+<h2 id="Decision-Trees-">Decision Trees <a name="dectree" /><a class="anchor-link" href="#Decision-Trees-">&#182;</a></h2><p>This project will use the the DecisionTreeRegressor function from the sklearn package to perform regression using Decision Trees.</p>
 <p>Decision Trees work by breaking down the dataset into smaller and smaller segments while a "decision tree" (i.e. a node structure with tests at each node to divide the data) is developed node by node. <a href="#2">2</a></p>
 <p>This algorithm works in the same way for both classification and regression.</p>
 <h3 id="Preprocessing-">Preprocessing <a name="preproc" /><a class="anchor-link" href="#Preprocessing-">&#182;</a></h3><p>First the data is imported and preprocessed. The preprocessing consists in splitting up the data into feature data (x values) and labels (y values) and rehsaping the X values as the LinearRegression() from linear_model function does not take a 1D array for the X values. First, a scatter plot of the data is produced to get a sense of the relationship between the variables and possible outliers:</p>
@@ -14311,6 +14311,8 @@ a.anchor-link {
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
 
+<span class="c1"># read in csv file power production into</span>
+<span class="c1"># dataframe</span>
 <span class="n">lin_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;powerproduction.csv&#39;</span><span class="p">)</span>
 
 <span class="c1"># X and y values for regression</span>
@@ -14370,7 +14372,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The plot resembles the sigmoid function <a href="#3">3</a>. There are outliers clearly present in the scatter plot. The appropriate method to deal with outliers varies from dataset to dataset. In this case, it is clear that several of the outliers (near power=0 Watts, after speed=10ms<sup>-1</sup>) are clearly unrelated to the apparent shape of the data and might be mistakes. As such, it is appropriate to remove them <a href="#4">4</a>.</p>
+<p>The plot resembles the sigmoid function <a href="#3">3</a>. There are outliers clearly present in the scatter plot. The appropriate method to deal with outliers varies from dataset to dataset. In this case, it is clear that several of the outliers (near power=0 Watts, after speed=10ms<sup>-1</sup>) are unrelated to the apparent shape of the data and might be mistakes. As such, it is appropriate to remove them <a href="#4">4</a>.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14588,6 +14590,7 @@ The DecisionTreeRegressor function is defined and used to fit a regressor to the
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 <span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
 
+<span class="c1"># train_test_splito n dataset, test size = 20%</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># create regressor and fit it to training data</span>
@@ -14664,9 +14667,9 @@ Coefficient of variation: 11.591463970745993
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Neural-Networks-">Neural Networks <a name="neural" /><a class="anchor-link" href="#Neural-Networks-">&#182;</a></h2><p>This project will use the the  function from the sklearn package to perform regression using Artificial Neural Networks.</p>
+<h2 id="Neural-Networks-">Neural Networks <a name="neural" /><a class="anchor-link" href="#Neural-Networks-">&#182;</a></h2><p>This project will use the Input, Dense and Model classes from the tensorflow.keras package to perform regression using Artificial Neural Networks.</p>
 <p>Neural networks operate in a similar manner to neurons in the brain <a href="#6">6</a>. Nodes in the neural network are connected together and they each have an activation function which depends on the inputs (which are the outputs of the other neurons, obtained via the connections).</p>
-<p>Activation functions differ but generally they are approximately 1 when a certain threshold value has been reached and approximately 0 if that value has not been reached. In addition, the connections between the neurons have weights which amplify or diminish the outputs (in an artificial neural network these are  set to randomly chosen small numbers <a href="#7">7</a></p>
+<p>Activation functions differ but generally they are approximately 1 when a certain threshold value has been reached and approximately 0 if that value has not been reached. In addition, the connections between the neurons have weights which amplify or diminish the outputs (in an artificial neural network these are  set to randomly chosen small numbers) <a href="#7">7</a></p>
 <p>In a typical artificial neural network, there is an input layer of neurons (which have inputs not connected to any other neuron), an output layer (which have outputs not connected to any other neuron) and a hidden layer (neurons which have inputs and outputs connected to other neurons). A deep neural network has multiple hidden layers. <a href="#8">8</a></p>
 <p>Neural networks can be used to learn functions and patterns to make predictions. Tensorflow makes predictions using neural networks.</p>
 
@@ -14674,13 +14677,14 @@ Coefficient of variation: 11.591463970745993
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Algorithm-">Algorithm <a name="alg2" /><a class="anchor-link" href="#Algorithm-">&#182;</a></h3><p>The data preprocessed for the decision tree classifier is used again for this.</p>
-<p>The train_test_split function is defined using the model_selection module from the sklearn package. This is used to randomly split the data into training and testing data.</p>
-<p>The Input and Dense classes are imported from tensorflow.keras.layers. The input layer and the hidden layers of the neural network are created as objects of these classes.<a href="#9">9</a></p>
-<p>There are 500 nodes in the first hidden layer of the artificial neural network. This is because there are 500 features and 500 labels to train the model on. The inputs of this layer are conntected to the outputs of the input layer (whose shape is the shape of the input data X).</p>
+<h3 id="Algorithm-">Algorithm <a name="alg2" /><a class="anchor-link" href="#Algorithm-">&#182;</a></h3><p>The data preprocessed for the decision tree classifier (lin_data) is used here for training and testing data.</p>
+<p>The train_test_split function is used again to split the data into training and testing data</p>
+<p>The Input and Dense classes are imported from tensorflow.keras.layers. The input layer and the hidden layers of the neural network are created as objects of these classes. <a href="#9">9</a></p>
+<p>There are 500 nodes in the first hidden layer of the artificial neural network. This number was chosen
+because there are 500 features and 500 labels to train the model on. The inputs of this layer are connected to the outputs of the input layer (whose shape is the shape of the input data X).</p>
 <p>After this, two more hidden layers, the first with 100 neurons and the second with 50 neurons, are created. The outputs of the last hidden layer are connected to the output layer (which has only 1 neuron).</p>
-<p>The activation function in this case is the rectified linear activation function or "relu". It is a piecewise linear function that returns the input if the input is positive. If the input is not positive it outputs 0. <a href="#10">10</a></p>
-<p>A regression model called model is created using the Model class. It uses the mean_squared error function for the losos function and the Adam algorithm for the optimiser. <a href="#11">11</a></p>
+<p>The activation function for the hidden layers in this case is the rectified linear activation function or "relu". It is a piecewise linear function that returns the input if the input is positive. If the input is not positive it outputs 0. <a href="#10">10</a></p>
+<p>A regression model called model is created using the Model class. It uses the mean_squared error function for the loss function and the Adam algorithm for the optimiser. <a href="#11">11</a></p>
 <p>The model is compiled as follows:</p>
 
 </div>
@@ -14694,8 +14698,10 @@ Coefficient of variation: 11.591463970745993
 <span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Dense</span>
 <span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Model</span>
 
+<span class="c1"># train and test data, test_size = 20%</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
+<span class="c1"># input, hidden and output layers</span>
 <span class="n">input_layer</span> <span class="o">=</span> <span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],))</span>
 <span class="n">dense_layer_1</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">)(</span><span class="n">input_layer</span><span class="p">)</span>
 <span class="n">dense_layer_2</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">)(</span><span class="n">dense_layer_1</span><span class="p">)</span>
@@ -14703,6 +14709,7 @@ Coefficient of variation: 11.591463970745993
 <span class="c1">#dense_layer_5 = Dense(10, activation=&#39;relu&#39;)(dense_layer_4)</span>
 <span class="n">output</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">)(</span><span class="n">dense_layer_3</span><span class="p">)</span>
 
+<span class="c1"># create model </span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">input_layer</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="n">output</span><span class="p">)</span>
 <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s2">&quot;mean_squared_error&quot;</span> <span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="s2">&quot;adam&quot;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean_squared_error&quot;</span><span class="p">])</span>
 </pre></div>
@@ -14724,8 +14731,10 @@ Coefficient of variation: 11.591463970745993
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># time for tic and toc variabls</span>
+<span class="kn">import</span> <span class="nn">time</span>
 <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">();</span>
+<span class="c1"># fit model to training data, 15 epochs</span>
 <span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">);</span>
 <span class="n">toc</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">();</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
@@ -14820,7 +14829,7 @@ Coefficient of variation: 9.060109223765716
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Discussion-">Discussion <a name="disc" /><a class="anchor-link" href="#Discussion-">&#182;</a></h1><p>Both models predict values that are very accurate. However, the Neural Network regresion model done through tensorflow had a coefficient of variation that was more than 2% lower than the Decision Tree regression model. It was significantly slower to train the network on the dataset compared to the Decision Tree regression, however.</p>
+<h1 id="Discussion-">Discussion <a name="disc" /><a class="anchor-link" href="#Discussion-">&#182;</a></h1><p>Both models predict values that are very accurate. However, the Neural Network regresion model done through tensorflow had a coefficient of variation that was more than 2% lower than the Decision Tree regression model. It was slower to train the network on the dataset compared to the Decision Tree regression, however.</p>
 <p>The code to make the models and generate predictions will be used to create a Flask server and generate values based on input from the user. In addition, this repository will be encapsulated in Docker image.</p>
 <p>Further work will be done in the "Fundamentals of Data Analysis" project. In that project, a linear regression will be performed on the dataset. In addition, a sigmoid function will be fit to the dataset as the data resembles a sigmoid function.</p>
 

@@ -6,16 +6,26 @@
   <head>
     <style>
 
+      div.container{
+
+        position: relative;
+        left: 25vw;
+      }
+
+      #h1 {
+        text-align: center; 
+      }
+
       #input {
-        width: 20vw;
+        width: 250px;
       }
 
       #output {
-        width: 20vw;
+        width: 250px;
       }
 
       #output2 {
-        width: 20vw;
+        width: 250px;
       }
       
       </style>
@@ -29,8 +39,13 @@
     <title>Decision Tree and Neural Network regression</title>
   </head>
   <body>
+    <h1 id="h1">Web service</h1>
     <br>
     <br>
+    <p id="p1">This page allows one to input speed values and get predicted values using said input using 
+      either the Decision Tree regression or the Neural Network regression. Please enter a number in the box below
+      and click on one of the two buttons below to get a predicted value.
+    </p>
     <div class="container">
       <div class="row">
         <div class="col-sm">
