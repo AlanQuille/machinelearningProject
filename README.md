@@ -1,5 +1,14 @@
 # Machine Learning Project 2020
-This repository contains Project2020.ipynb, Project2020.html, this README.md file, a .gitignore file, flask_server.py and powerproduction.csv
+This repository contains Project2020.ipynb, Project2020.html, this README.md file, a .gitignore file, flask_server.py and powerproduction.csv. In addition, there is a Dockerfile to build and run the web service.
+
+## Dockerfile
+To build the docker, type the following and press Enter  in the command line in the repo: <br>
+**docker build -t regpredict .**
+<br>
+To run the web service, type the following and press Enter:
+<br>
+**docker run --name dockercontainer -d -p 5000:5000 regpredict**
+
 
 ## Project2020.ipynb
 This is the main notebook for the project. To run this, install jupyter, navigate to the repo folder in a command line interface and type jupyter notebook and press Enter.
