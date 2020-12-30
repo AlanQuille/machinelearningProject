@@ -43,8 +43,8 @@
     <br>
     <br>
     <p id="p1">This page allows one to input speed values and get predicted values using said input using 
-      either the Decision Tree regression or the Neural Network regression. Please enter a number in the box below
-      and click on one of the two buttons below to get a predicted value.
+      either the Decision Tree regression or the Random Forest regression (the Neural Network regression is omitted) 
+      Please enter a number in the box below and click on one of the two buttons below to get a predicted value.
     </p>
     <div class="container">
       <div class="row">
@@ -78,12 +78,12 @@
       <div class="container">
         <div class="row">
           <div class="col-sm">
-            <input class="form-control" id="output2" type="text" placeholder="Output NOTE WILL TAKE 9-12 SECS" readonly>
+            <input class="form-control" id="output2" type="text" placeholder="Output" readonly>
           </div>
         </div>
         <div class="row">
           <div class="col-sm">
-            <button type="button" class="btn btn-success" id="neuralnet-button">Neural Net</button>
+            <button type="button" class="btn btn-success" id="neuralnet-button">Random Forest</button>
           </div>
         </div>
       </div>
@@ -129,14 +129,14 @@
             var val_var = document.getElementById("input").value;
             $.ajax({
             type : 'POST',
-            url : "/api/neuralNet",
+            url : "/api/random",
             contentType: 'application/json;charset=UTF-8',
             data : val_var
             });
 
 
 
-            $.getJSON("/api/neuralNet", function(data) {
+            $.getJSON("/api/randomForest", function(data) {
                 $('#output2').val(data.value);
             });
         });
