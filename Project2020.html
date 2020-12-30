@@ -14276,6 +14276,10 @@ a.anchor-link {
 <p>2.1 <a href="#alg2">Algorithm</a></p>
 <p>2.2 <a href="#pred2">Predictions</a></p>
 </li>
+<li><p><a href="#randfor">Random Forest</a></p>
+<p>2.1 <a href="#alg3">Algorithm</a></p>
+<p>2.2 <a href="#pred3">Predictions</a></p>
+</li>
 <li><p><a href="#disc">Discussion</a></p>
 </li>
 <li><p><a href="#ref">References</a></p>
@@ -14286,7 +14290,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Introduction-">Introduction <a name="introduction" /><a class="anchor-link" href="#Introduction-">&#182;</a></h2><p>The goal of this project is to make 2 predictive models which predict wind turbine power from wind turbine speed. The dataset features and labels (i.e. input and output values) <a href="#1">1</a> that are both continuous so regression models are employed. The two models are decision tree regression and neural networks respectively.</p>
+<h2 id="Introduction-">Introduction <a name="introduction" /><a class="anchor-link" href="#Introduction-">&#182;</a></h2><p>The goal of this project is to make 3 predictive models which predict wind turbine power from wind turbine speed. The dataset features and labels (i.e. input and output values) <a href="#1">1</a> that are both continuous so regression models are employed. The three models are Decision Trees, Neural Networks and Random Forest respectively (all are supervised learning algorithms).</p>
 
 </div>
 </div>
@@ -14301,7 +14305,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import data </span>
@@ -14510,7 +14514,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># remove rows by row numbers</span>
@@ -14532,7 +14536,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 
 
 
@@ -14556,7 +14560,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># X and y values for regression</span>
@@ -14678,7 +14682,7 @@ Coefficient of variation: 11.591463970745993
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Algorithm-">Algorithm <a name="alg2" /><a class="anchor-link" href="#Algorithm-">&#182;</a></h3><p>The data preprocessed for the decision tree classifier (lin_data) is used here for training and testing data.</p>
-<p>The train_test_split function is used again to split the data into training and testing data</p>
+<p>The train_test_split function is used again to split the data into training and testing data.</p>
 <p>The Input and Dense classes are imported from tensorflow.keras.layers. The input layer and the hidden layers of the neural network are created as objects of these classes. <a href="#9">9</a></p>
 <p>There are 500 nodes in the first hidden layer of the artificial neural network. This number was chosen
 because there are 500 features and 500 labels to train the model on. The inputs of this layer are connected to the outputs of the input layer (whose shape is the shape of the input data X).</p>
@@ -14829,8 +14833,102 @@ Coefficient of variation: 9.060109223765716
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Discussion-">Discussion <a name="disc" /><a class="anchor-link" href="#Discussion-">&#182;</a></h1><p>Both models predict values that are very accurate. However, the Neural Network regresion model done through tensorflow had a coefficient of variation that was more than 2% lower than the Decision Tree regression model. It was slower to train the network on the dataset compared to the Decision Tree regression, however.</p>
-<p>The code to make the models and generate predictions will be used to create a Flask server and generate values based on input from the user. In addition, this repository will be encapsulated in Docker image.</p>
+<h2 id="Random-Forest-">Random Forest <a name="randfor" /><a class="anchor-link" href="#Random-Forest-">&#182;</a></h2><p>This project will use the RandomForestRegressor function from sklearn to perform the regression.</p>
+<p>The algorithm works by combining the results from more than one decision tree to improve the result from one alone <a href="#ref2">12</a>. It can be used for both regression and classification.</p>
+<p>In the regression case, it works by getting the average of each regression done by each decision tree.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Algorithm-">Algorithm <a name="alg3" /><a class="anchor-link" href="#Algorithm-">&#182;</a></h3><p>The data preprocessed for the decision tree classifier (lin_data) is used here for training and testing data.</p>
+<p>The train_test_split function is used again to split the data into training and testing data.</p>
+<p>The attribute n_estimators in RandomForestRegressor is the number of decision trees that will be generated.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+
+<span class="c1"># train and test data, test_size = 20%</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">regressor</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">regressor</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">);</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Predictions-">Predictions <a name="pred3" /><a class="anchor-link" href="#Predictions-">&#182;</a></h3><p>The predicted values are calculated using the regressor and the X_test testing data as before. Then various metrics (including the coefficient of variation) are calculated to test the efficacy of the model as before.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># predicted y values using model</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean Absolute Error:&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">.</span><span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean Squared Error:&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Root Mean Squared Error:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean of observed y values:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="c1"># coefficient of variation </span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Coefficient of variation:&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Mean Absolute Error: 3.7109551020408147
+Mean Squared Error: 22.40140609683672
+Root Mean Squared Error: 4.733012370239139
+Mean of observed y values: 49.397720164609055
+Coefficient of variation: 9.581438889218417
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The coefficient of variation in this case is 9.58%. This is much less than the aforementioned threshold value of 25% so this is a very accurate regression model. In addition the training was done almost instantaneously.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Discussion-">Discussion <a name="disc" /><a class="anchor-link" href="#Discussion-">&#182;</a></h1><p>Al models predict values that are very accurate. However, the Neural Network regresion model done through tensorflow had a coefficient of variation that was more than 2% lower than the Decision Tree regression model and 0.5% less than the Random Forest regression model, making it the most accurate one. It was slowest to train the model at 2.381 seconds however.</p>
+<p>The code to make the Decision Tree and Random Forest models to generate predictions will be used to create a Flask server and generate values based on input from the user. In addition, this repository will be encapsulated in Docker image (The Neural Network regression will be omitted as that takes a relatively long time to load and does not produce significantly more accurate results than the Random Forest regression).</p>
 <p>Further work will be done in the "Fundamentals of Data Analysis" project. In that project, a linear regression will be performed on the dataset. In addition, a sigmoid function will be fit to the dataset as the data resembles a sigmoid function.</p>
 
 </div>
@@ -14847,7 +14945,8 @@ Coefficient of variation: 9.060109223765716
 [8] Brownlee, J., 2020. What Is Deep Learning?. [online] Machine Learning Mastery. Available at: <a href="https://machinelearningmastery.com/what-is-deep-learning/">https://machinelearningmastery.com/what-is-deep-learning/</a> [Accessed 28 December 2020]. <a name="8"></a> <br>
 [9] Stack Abuse. 2020. Tensorflow 2.0: Solving Classification And Regression Problems. [online] Available at: <a href="https://stackabuse.com/tensorflow-2-0-solving-classification-and-regression-problems/">https://stackabuse.com/tensorflow-2-0-solving-classification-and-regression-problems/</a> [Accessed 28 December 2020]. <a name="9"></a> <br>
 [10] Brownlee, J., 2020. A Gentle Introduction To The Rectified Linear Unit (Relu). [online] Machine Learning Mastery. Available at: <a href="https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/">https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/</a> [Accessed 28 December 2020]. <a name="10"></a> <br>
-[11] TensorFlow. 2020. Tf.Keras.Optimizers.Adam  |  Tensorflow Core V2.4.0. [online] Available at: <a href="https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/Adam">https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/Adam</a> [Accessed 28 December 2020]. <a name="11"></a></p>
+[11] TensorFlow. 2020. Tf.Keras.Optimizers.Adam  |  Tensorflow Core V2.4.0. [online] Available at: <a href="https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/Adam">https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/Adam</a> [Accessed 28 December 2020]. <a name="11"></a> <br>
+[12] Built In. 2020. A Complete Guide To The Random Forest Algorithm. [online] Available at: <a href="https://builtin.com/data-science/random-forest-algorithm">https://builtin.com/data-science/random-forest-algorithm</a> [Accessed 29 December 2020]. <a name="12"></a></p>
 
 </div>
 </div>
