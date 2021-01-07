@@ -14290,7 +14290,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Introduction-">Introduction <a name="introduction" /><a class="anchor-link" href="#Introduction-">&#182;</a></h2><p>The goal of this project is to make 3 predictive models which predict wind turbine power from wind turbine speed. The dataset features and labels (i.e. input and output values) <a href="#1">1</a> that are both continuous so regression models are employed. The three models are Decision Trees, Neural Networks and Random Forest respectively (all are supervised learning algorithms).</p>
+<h2 id="Introduction-">Introduction <a name="introduction" /><a class="anchor-link" href="#Introduction-">&#182;</a></h2><p>The goal of this project is to make 3 predictive models which predict wind turbine power from wind turbine speed. The dataset features and labels (i.e. input and output values) <a href="#1">1</a> are both continuous so regression models are employed. The three models are Decision Trees, Neural Networks and Random Forest respectively (all are supervised learning algorithms).</p>
 
 </div>
 </div>
@@ -14927,7 +14927,7 @@ Coefficient of variation: 9.581438889218417
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Discussion-">Discussion <a name="disc" /><a class="anchor-link" href="#Discussion-">&#182;</a></h1><p>Al models predict values that are very accurate. However, the Neural Network regresion model done through tensorflow had a coefficient of variation that was more than 2% lower than the Decision Tree regression model and 0.5% less than the Random Forest regression model, making it the most accurate one. It was slowest to train the model at 2.381 seconds however.</p>
+<h1 id="Discussion-">Discussion <a name="disc" /><a class="anchor-link" href="#Discussion-">&#182;</a></h1><p>All models predict values that are very accurate. However, the Neural Network regresion model done through tensorflow had a coefficient of variation that was more than 2% lower than the Decision Tree regression model and 0.5% less than the Random Forest regression model, making it the most accurate one. It was slowest to train the model at 2.381 seconds however.</p>
 <p>The code to make the Decision Tree and Random Forest models to generate predictions will be used to create a Flask server and generate values based on input from the user. In addition, this repository will be encapsulated in Docker image (The Neural Network regression will be omitted as that takes a relatively long time to load and does not produce significantly more accurate results than the Random Forest regression).</p>
 <p>Further work will be done in the "Fundamentals of Data Analysis" project. In that project, a linear regression will be performed on the dataset. In addition, a sigmoid function will be fit to the dataset as the data resembles a sigmoid function.</p>
 

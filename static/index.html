@@ -8,7 +8,7 @@
 
       div.container{
         position: relative;
-        left: 25vw;
+        margin-left: 35vw;
       }
 
       #h1 {
@@ -27,6 +27,19 @@
       #output2 {
         width: 250px;
       }
+
+      #p1 {
+
+        margin-left: 25vw;
+        margin-right: 30vw;
+        padding-bottom: 30px;
+        padding-top: 30px;
+      
+      }
+
+      body {
+        background-image: url(cool-background.png);
+      }
       
       </style>
     <!-- Required meta tags -->
@@ -39,8 +52,6 @@
     <title>Decision Tree and Neural Network regression</title>
   </head>
   <body>
-    <h1 id="h1">Web service</h1>
-    <br>
     <br>
     <p id="p1">This page allows one to input speed values and get predicted values using said input using 
       either the Decision Tree regression or the Random Forest regression (the Neural Network regression is omitted) 
@@ -68,7 +79,7 @@
         </div>
         <div class="row">
           <div class="col-sm">
-            <button type="button" class="btn btn-success" id="dectree-button">Decision Tree</button>
+            <button type="button" style="background-color: #6495ED; border: none;" class="btn btn-success" id="dectree-button">Decision Tree</button>
           </div>
         </div>
       </div>
@@ -83,7 +94,7 @@
         </div>
         <div class="row">
           <div class="col-sm">
-            <button type="button" class="btn btn-success" id="neuralnet-button">Random Forest</button>
+            <button type="button" style="background-color: #6495ED; border: none;" class="btn btn-success" id="neuralnet-button">Random Forest</button>
           </div>
         </div>
       </div>
