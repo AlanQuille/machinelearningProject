@@ -9,7 +9,7 @@
 
 
 <style type="text/css">
-    pre { line-height: 125%; margin: 0; }
+    pre { line-height: 125%; }
 td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
 td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
@@ -14305,7 +14305,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import data </span>
@@ -14514,7 +14514,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># remove rows by row numbers</span>
@@ -14536,7 +14536,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
 
 
@@ -14560,7 +14560,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># X and y values for regression</span>
@@ -14587,7 +14587,7 @@ The DecisionTreeRegressor function is defined and used to fit a regressor to the
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># decision tree regression</span>
@@ -14610,13 +14610,13 @@ The DecisionTreeRegressor function is defined and used to fit a regressor to the
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Predictions-">Predictions <a name="pred" /><a class="anchor-link" href="#Predictions-">&#182;</a></h3><p>The predicted values are calculated using the regressor and the X_test testing data. Then various metrics (mean absolute error, mean squared error and root mean squared error) are calculated to test the efficacy of the model. In addition, the coefficient of variation (the root mean squared error RMSE as a percentage of the mean of the observed valeus) is calculated.</p>
+<h3 id="Predictions-">Predictions <a name="pred" /><a class="anchor-link" href="#Predictions-">&#182;</a></h3><p>The predicted values are calculated using the regressor and the X_test testing data. Then various metrics (mean absolute error, mean squared error and root mean squared error) are calculated to test the efficacy of the model. In addition, the coefficient of variation (the root mean squared error RMSE as a percentage of the mean of the observed values) is calculated.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get metrics from sklearn</span>
@@ -14629,7 +14629,7 @@ The DecisionTreeRegressor function is defined and used to fit a regressor to the
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Root Mean Squared Error:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean of observed y values:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
 <span class="c1"># coefficient of variation </span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Coefficient of variation:&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Coefficient of variation:&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y_test</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14653,7 +14653,7 @@ The DecisionTreeRegressor function is defined and used to fit a regressor to the
 Mean Squared Error: 32.78614765306122
 Root Mean Squared Error: 5.725918935250587
 Mean of observed y values: 49.397720164609055
-Coefficient of variation: 11.591463970745993
+Coefficient of variation: 11.569824103280114
 </pre>
 </div>
 </div>
@@ -14665,7 +14665,7 @@ Coefficient of variation: 11.591463970745993
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The coefficient of variation is 11.6%. A good coefficient of variation is considered to be less than 25% <a href="#5">5</a> so the decision tree regression model is very accurate at predicting power from speed values.</p>
+<p>The coefficient of variation is 11.57%. A good coefficient of variation is considered to be less than 25% <a href="#5">5</a> so the decision tree regression model is very accurate at predicting power from speed values.</p>
 
 </div>
 </div>
@@ -14695,7 +14695,7 @@ because there are 500 features and 500 labels to train the model on. The inputs 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
@@ -14732,7 +14732,7 @@ because there are 500 features and 500 labels to train the model on. The inputs 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># time for tic and toc variabls</span>
@@ -14763,7 +14763,7 @@ because there are 500 features and 500 labels to train the model on. The inputs 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>
-The training was accomplished in 2.3851 seconds
+The training was accomplished in 2.4607 seconds
 </pre>
 </div>
 </div>
@@ -14781,7 +14781,7 @@ The training was accomplished in 2.3851 seconds
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># predicted y values using model</span>
@@ -14791,7 +14791,7 @@ The training was accomplished in 2.3851 seconds
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Root Mean Squared Error:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean of observed y values:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
 <span class="c1"># coefficient of variation </span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Coefficient of variation:&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Coefficient of variation:&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y_test</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14811,11 +14811,11 @@ The training was accomplished in 2.3851 seconds
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Mean Absolute Error: 3.5928066706560102
-Mean Squared Error: 20.029987476185013
-Root Mean Squared Error: 4.475487400963722
+<pre>Mean Absolute Error: 3.4581623084204542
+Mean Squared Error: 19.255523174999897
+Root Mean Squared Error: 4.3881115727611
 Mean of observed y values: 49.397720164609055
-Coefficient of variation: 9.060109223765716
+Coefficient of variation: 8.866642999407382
 </pre>
 </div>
 </div>
@@ -14827,7 +14827,7 @@ Coefficient of variation: 9.060109223765716
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The coefficient of variation in this case is 9.06%. This is much less than the aforementioned threshold value of 25% so this is a very accurate regression model. However, the model took 2.3851 seconds to train the data, which is more than the Decision Tree regression which was approximately instantaneous.</p>
+<p>The coefficient of variation in this case is 8.86%. This is much less than the aforementioned threshold value of 25% so this is a very accurate regression model. However, the model took 2.46 seconds to train the data, which is more than the Decision Tree regression which was approximately instantaneous.</p>
 
 </div>
 </div>
@@ -14849,7 +14849,7 @@ Coefficient of variation: 9.060109223765716
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
@@ -14875,7 +14875,7 @@ Coefficient of variation: 9.060109223765716
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># predicted y values using model</span>
@@ -14885,7 +14885,7 @@ Coefficient of variation: 9.060109223765716
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Root Mean Squared Error:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean of observed y values:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
 <span class="c1"># coefficient of variation </span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Coefficient of variation:&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Coefficient of variation:&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y_test</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14909,7 +14909,7 @@ Coefficient of variation: 9.060109223765716
 Mean Squared Error: 22.40140609683672
 Root Mean Squared Error: 4.733012370239139
 Mean of observed y values: 49.397720164609055
-Coefficient of variation: 9.581438889218417
+Coefficient of variation: 9.56355149654581
 </pre>
 </div>
 </div>
@@ -14921,15 +14921,15 @@ Coefficient of variation: 9.581438889218417
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The coefficient of variation in this case is 9.58%. This is much less than the aforementioned threshold value of 25% so this is a very accurate regression model. In addition the training was done almost instantaneously.</p>
+<p>The coefficient of variation in this case is 9.56%. This is much less than the aforementioned threshold value of 25% so this is a very accurate regression model. In addition the training was done almost instantaneously.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Discussion-">Discussion <a name="disc" /><a class="anchor-link" href="#Discussion-">&#182;</a></h1><p>All models predict values that are very accurate. However, the Neural Network regresion model done through tensorflow had a coefficient of variation that was more than 2% lower than the Decision Tree regression model and 0.5% less than the Random Forest regression model, making it the most accurate one. It was slowest to train the model at 2.381 seconds however.</p>
+<h1 id="Discussion-">Discussion <a name="disc" /><a class="anchor-link" href="#Discussion-">&#182;</a></h1><p>All models predict values that are very accurate. However, the Neural Network regresion model done through tensorflow had a coefficient of variation that was more than 2% lower than the Decision Tree regression model and 0.7% less than the Random Forest regression model, making it the most accurate one. It was slowest to train the model at 2.46 seconds however.</p>
 <p>The code to make the Decision Tree and Random Forest models to generate predictions will be used to create a Flask server and generate values based on input from the user. In addition, this repository will be encapsulated in Docker image (The Neural Network regression will be omitted as that takes a relatively long time to load and does not produce significantly more accurate results than the Random Forest regression).</p>
-<p>Further work will be done in the "Fundamentals of Data Analysis" project. In that project, a linear regression will be performed on the dataset. In addition, a sigmoid function will be fit to the dataset as the data resembles a sigmoid function.</p>
+<p>Further work will be done in the "Fundamentals of Data Analysis" project. In that project, a linear regression will be performed on the dataset. In addition, a sigmoid function will be fit to the dataset as the data resembles a sigmoid function as well as a polynomial function.</p>
 
 </div>
 </div>
