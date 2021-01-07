@@ -7,7 +7,7 @@ To build the docker, type the following and press Enter  in the command line in 
 <br>
 To run the web service, type the following and press Enter:
 <br>
-**docker run --name dockercontainer -d -p 5000:5000 regpredict**
+**docker run -d -p 5000:5000 regpredict**
 
 
 ## Project2020.ipynb
