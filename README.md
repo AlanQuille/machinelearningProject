@@ -1,4 +1,4 @@
-# Machine Learning Project 2020
+# Machine Learning and Statistics Project 2020
 This repository contains Project2020.ipynb, Project2020.html, this README.md file, a .gitignore file, flask_server.py and powerproduction.csv. In addition, there is a Dockerfile to build and run the web service.
 
 ## Dockerfile
